@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="_ds/nocturne-14b57070-fb06-4820-ae7a-51d4ed12f54d/styles.css">
+<script src="_ds/nocturne-14b57070-fb06-4820-ae7a-51d4ed12f54d/_ds_bundle.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css">
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/duotone/style.css">
+<style>
+  html { scroll-behavior: smooth; scroll-padding-top: 78px; }
+  @media (prefers-reduced-motion: reduce){ html { scroll-behavior: auto; } }
+  a { color: var(--color-accent); text-decoration: none; }
+  a:hover { color: var(--color-accent-300); }
+  .svc-card:hover { box-shadow: 0 0 0 1px var(--color-accent), 0 10px 30px rgba(0,0,0,.5) !important; transform: translateY(-3px); }
+  .svc-card { transition: transform .18s ease, box-shadow .18s ease; }
+  .post-card:hover { box-shadow: 0 0 0 1px var(--color-accent), 0 12px 34px rgba(0,0,0,.55) !important; transform: translateY(-3px); }
+  .post-card { transition: transform .18s ease, box-shadow .18s ease; }
+  .post-card:hover .post-thumb img { transform: scale(1.05); }
+  .post-thumb img { transition: transform .4s ease; }
+  .navlink { font-size:14px; color:color-mix(in srgb, var(--color-text) 78%, transparent); }
+  .navlink:hover { color:var(--color-text); }
+  .navlink[data-active="true"] { color:var(--color-accent); }
+</style>
+</helmet>
+
+<div style="min-height:100vh; background: radial-gradient(1100px 640px at 86% -180px, color-mix(in srgb, var(--color-accent-900) 80%, transparent), transparent 60%), radial-gradient(1000px 760px at -8% 104%, color-mix(in srgb, black 34%, transparent), transparent 55%), var(--color-bg); color: var(--color-text); font-family: var(--font-body);">
+
+  <!-- ============ NAV ============ -->
+  <nav class="nav" style="position:sticky; top:0; z-index:30; max-width:1240px; margin:0 auto; padding:12px clamp(20px,5vw,64px); backdrop-filter:blur(12px); background:color-mix(in srgb, var(--color-bg) 78%, transparent); border-bottom:1px solid var(--color-divider);">
+    <a href="index.html" class="nav-brand" style="display:flex; align-items:center; gap:9px; color:var(--color-text);">
+      <span style="display:inline-flex; align-items:center; justify-content:center; width:30px; height:30px; border-radius:8px; border:1px solid var(--color-accent); color:var(--color-accent); font-size:16px;"><i class="ph ph-shield-check"></i></span>
+      RS Tech Solutions
+    </a>
+    <a href="index.html" class="navlink" data-active="true">Home</a>
+    <a href="services.html" class="navlink">Services</a>
+    <a href="about.html" class="navlink">About</a>
+    <a href="blog.html" class="navlink">Blog</a>
+    <a href="#contact" class="btn btn-primary" style="gap:6px; white-space:nowrap;"><i class="ph ph-phone-call"></i> Get in touch</a>
+  </nav>
+
+  <div id="top" style="max-width:1240px; margin:0 auto; padding:0 clamp(20px,5vw,64px);">
+
+    <!-- ============ HERO ============ -->
+    <section style="padding: clamp(48px,8vw,104px) 0 clamp(40px,6vw,64px); display:grid; grid-template-columns:minmax(0,1.35fr) minmax(0,1fr); gap:clamp(32px,5vw,64px); align-items:center;">
+      <div style="max-width:640px;">
+        <span style="display:inline-flex; align-items:center; gap:8px; font-size:12px; letter-spacing:.08em; text-transform:uppercase; color:var(--color-accent); margin-bottom:22px;">
+          <span style="width:32px; height:1px; background:var(--color-accent);"></span> Friendly IT support, done properly
+        </span>
+        <h1 style="font-size:clamp(38px,5.4vw,68px); line-height:1.04; letter-spacing:-0.022em; margin:0 0 24px;">Behind every fix is a foundation of knowledge.</h1>
+        <p style="font-size:clamp(17px,1.7vw,21px); line-height:1.55; max-width:52ch; color:color-mix(in srgb, var(--color-text) 82%, transparent); margin:0 0 8px;">Learn it. Master it. Or let us handle it. From 24/7 remote support to networks, hosting and cyber security — one local team keeping your technology working so you don't have to think about it.</p>
+        <div style="display:flex; gap:12px; flex-wrap:wrap; margin-top:30px;">
+          <a href="#contact" class="btn btn-primary" style="font-size:14px; padding:11px 20px;"><i class="ph ph-chat-circle-dots"></i> Get a free callback</a>
+          <a href="services.html" class="btn btn-secondary" style="font-size:14px; padding:11px 20px;">Explore services <i class="ph ph-arrow-right"></i></a>
+        </div>
+        <p style="display:flex; align-items:center; gap:8px; font-size:13px; color:color-mix(in srgb, var(--color-text) 55%, transparent); margin:22px 0 0;"><i class="ph ph-clock-countdown" style="color:var(--color-accent);"></i> We reply to every enquiry within one working hour.</p>
+      </div>
+      <figure class="lighten" style="margin:0;">
+        <div style="position:relative; width:100%; aspect-ratio:4/5; border-radius:var(--radius-lg); overflow:hidden; box-shadow:var(--shadow-lg); border:1px solid var(--color-divider);">
+          <x-import component-from-global-scope="image-slot" from="./image-slot.js" id="hero-photo" shape="rect" fit="cover" placeholder="Drop a hero photo (workspace, kit, or team)" hint-size="100%,100%"></x-import>
+        </div>
+      </figure>
+    </section>
+
+  </div>
+
+  <!-- ============ TRUST / STAT BAND (full-bleed) ============ -->
+  <sc-if value="{{ showStats }}" hint-placeholder-val="{{ true }}">
+  <section aria-label="Why clients trust us" style="background: radial-gradient(900px 420px at 85% -40%, color-mix(in srgb, var(--color-section-glow) 70%, transparent), transparent 64%), var(--color-section); margin: clamp(20px,4vw,48px) 0;">
+    <div style="max-width:1240px; margin:0 auto; padding: clamp(36px,5vw,56px) clamp(20px,5vw,64px); display:grid; grid-template-columns:repeat(auto-fit, minmax(180px,1fr)); gap:28px;">
+      <div><p style="font-size:clamp(30px,3.4vw,46px); line-height:1.1; margin:0;">24/7</p><p style="font-size:12px; letter-spacing:.06em; text-transform:uppercase; color:color-mix(in srgb, var(--color-text) 66%, transparent); margin:8px 0 0;">Remote support cover</p></div>
+      <div><p style="font-size:clamp(30px,3.4vw,46px); line-height:1.1; margin:0;">&lt; 1 hr</p><p style="font-size:12px; letter-spacing:.06em; text-transform:uppercase; color:color-mix(in srgb, var(--color-text) 66%, transparent); margin:8px 0 0;">Average response time</p></div>
+      <div><p style="font-size:clamp(30px,3.4vw,46px); line-height:1.1; margin:0;">12+</p><p style="font-size:12px; letter-spacing:.06em; text-transform:uppercase; color:color-mix(in srgb, var(--color-text) 66%, transparent); margin:8px 0 0;">Services under one roof</p></div>
+      <div><p style="font-size:clamp(30px,3.4vw,46px); line-height:1.1; margin:0;">No jargon</p><p style="font-size:12px; letter-spacing:.06em; text-transform:uppercase; color:color-mix(in srgb, var(--color-text) 66%, transparent); margin:8px 0 0;">Plain-English advice</p></div>
+    </div>
+  </section>
+  </sc-if>
+
+  <div style="max-width:1240px; margin:0 auto; padding:0 clamp(20px,5vw,64px);">
+
+    <!-- ============ SERVICES PREVIEW ============ -->
+    <section id="services" style="padding: clamp(40px,6vw,80px) 0 clamp(24px,4vw,48px);">
+      <div style="display:flex; flex-wrap:wrap; gap:20px; align-items:flex-end; justify-content:space-between; margin-bottom:40px;">
+        <div>
+          <span style="display:block; font-size:12px; letter-spacing:.09em; text-transform:uppercase; color:var(--color-accent); margin-bottom:12px;">What we do</span>
+          <h2 style="font-size:clamp(28px,3.6vw,40px); line-height:1.1; letter-spacing:-0.015em; margin:0 0 12px; max-width:20ch;">Everything your tech needs, from one team</h2>
+          <p style="font-size:16px; max-width:56ch; color:color-mix(in srgb, var(--color-text) 74%, transparent); margin:0;">A one-off fix or ongoing support — here's a taste of what we cover. See the full list for details on every service.</p>
+        </div>
+        <a href="services.html" class="btn btn-secondary" style="font-size:14px; padding:11px 20px; white-space:nowrap;">All 12 services <i class="ph ph-arrow-right"></i></a>
+      </div>
+
+      <div style="display:grid; grid-template-columns:repeat(auto-fill, minmax(280px,1fr)); gap:16px;">
+
+        <a href="services.html#remote-support" class="card elev-sm svc-card" style="text-decoration:none; color:var(--color-text);">
+          <span style="display:inline-flex; align-items:center; justify-content:center; width:44px; height:44px; border-radius:10px; background:var(--color-accent-900); color:var(--color-accent-300); font-size:24px;"><i class="ph-duotone ph-headset"></i></span>
+          <span class="card-title">24/7 Remote Support</span>
+          <p class="card-body">Immediate expert help without an onsite visit — one-off fixes or ongoing contracts.</p>
+          <span class="btn btn-ghost" style="align-self:flex-start; padding-left:0;">Learn more <i class="ph ph-arrow-right"></i></span>
+        </a>
+
+        <a href="services.html#website-development" class="card elev-sm svc-card" style="text-decoration:none; color:var(--color-text);">
+          <span style="display:inline-flex; align-items:center; justify-content:center; width:44px; height:44px; border-radius:10px; background:var(--color-accent-900); color:var(--color-accent-300); font-size:24px;"><i class="ph-duotone ph-code"></i></span>
+          <span class="card-title">Website Development</span>
+          <p class="card-body">Responsive, modern sites and online stores that reflect your brand and goals.</p>
+          <span class="btn btn-ghost" style="align-self:flex-start; padding-left:0;">Learn more <i class="ph ph-arrow-right"></i></span>
+        </a>
+
+        <a href="services.html#website-hosting" class="card elev-sm svc-card" style="text-decoration:none; color:var(--color-text);">
+          <span style="display:inline-flex; align-items:center; justify-content:center; width:44px; height:44px; border-radius:10px; background:var(--color-accent-900); color:var(--color-accent-300); font-size:24px;"><i class="ph-duotone ph-cloud-check"></i></span>
+          <span class="card-title">Website Hosting</span>
+          <p class="card-body">Secure, reliable hosting with daily backups, SSL and uptime monitoring.</p>
+          <span class="btn btn-ghost" style="align-self:flex-start; padding-left:0;">Learn more <i class="ph ph-arrow-right"></i></span>
+        </a>
+
+        <a href="services.html#cyber-essentials" class="card elev-sm svc-card" style="text-decoration:none; color:var(--color-text);">
+          <span style="display:inline-flex; align-items:center; justify-content:center; width:44px; height:44px; border-radius:10px; background:var(--color-accent-900); color:var(--color-accent-300); font-size:24px;"><i class="ph-duotone ph-shield-check"></i></span>
+          <span class="card-title">Cyber Essentials</span>
+          <p class="card-body">Guided certification — gap analysis, remediation and application support.</p>
+          <span class="btn btn-ghost" style="align-self:flex-start; padding-left:0;">Learn more <i class="ph ph-arrow-right"></i></span>
+        </a>
+
+        <a href="services.html#home-network" class="card elev-sm svc-card" style="text-decoration:none; color:var(--color-text);">
+          <span style="display:inline-flex; align-items:center; justify-content:center; width:44px; height:44px; border-radius:10px; background:var(--color-accent-900); color:var(--color-accent-300); font-size:24px;"><i class="ph-duotone ph-wifi-high"></i></span>
+          <span class="card-title">Home Network Installations</span>
+          <p class="card-body">Whole-home Wi-Fi, UniFi setup and speed optimisation that just works.</p>
+          <span class="btn btn-ghost" style="align-self:flex-start; padding-left:0;">Learn more <i class="ph ph-arrow-right"></i></span>
+        </a>
+
+        <a href="services.html#office-365" class="card elev-sm svc-card" style="text-decoration:none; color:var(--color-text);">
+          <span style="display:inline-flex; align-items:center; justify-content:center; width:44px; height:44px; border-radius:10px; background:var(--color-accent-900); color:var(--color-accent-300); font-size:24px;"><i class="ph-duotone ph-microsoft-outlook-logo"></i></span>
+          <span class="card-title">Office 365 Support</span>
+          <p class="card-body">Microsoft 365 setup, email migrations, SharePoint and user training.</p>
+          <span class="btn btn-ghost" style="align-self:flex-start; padding-left:0;">Learn more <i class="ph ph-arrow-right"></i></span>
+        </a>
+
+      </div>
+    </section>
+
+    <!-- ============ BLOG PREVIEW ============ -->
+    <section id="blog" style="padding: clamp(40px,6vw,72px) 0;">
+      <div style="display:flex; flex-wrap:wrap; gap:20px; align-items:flex-end; justify-content:space-between; margin-bottom:40px;">
+        <div>
+          <span style="display:block; font-size:12px; letter-spacing:.09em; text-transform:uppercase; color:var(--color-accent); margin-bottom:12px;">From the blog</span>
+          <h2 style="font-size:clamp(28px,3.6vw,40px); line-height:1.1; letter-spacing:-0.015em; margin:0 0 12px; max-width:22ch;">Practical IT advice, in plain English</h2>
+          <p style="font-size:16px; max-width:56ch; color:color-mix(in srgb, var(--color-text) 74%, transparent); margin:0;">Guides, security tips and technology insights to help you stay informed, secure and productive.</p>
+        </div>
+        <a href="blog.html" class="btn btn-secondary" style="font-size:14px; padding:11px 20px; white-space:nowrap;">Read the blog <i class="ph ph-arrow-right"></i></a>
+      </div>
+
+      <div style="display:grid; grid-template-columns:repeat(auto-fill, minmax(300px,1fr)); gap:20px;">
+
+        <a href="https://rstechsolutions.co.uk/2025/06/23/best-android-launchers-for-all-phones-2025/" target="_blank" rel="noopener" class="card elev-sm post-card" style="text-decoration:none; color:var(--color-text); padding:0; overflow:hidden; gap:0;">
+          <span class="post-thumb" style="display:block; position:relative; aspect-ratio:16/10; overflow:hidden; background:linear-gradient(135deg, var(--color-accent-900), var(--color-surface));"><img src="https://rstechsolutions.co.uk/wp-content/uploads/2025/06/image-2.png" alt="Best Android launchers 2025" loading="lazy" style="width:100%; height:100%; object-fit:cover; display:block;" /></span>
+          <span style="display:flex; flex-direction:column; gap:10px; padding:18px 20px 22px;">
+            <span style="display:flex; align-items:center; gap:10px; font-size:11px; letter-spacing:.05em; text-transform:uppercase; color:color-mix(in srgb, var(--color-text) 55%, transparent);"><span class="tag tag-accent" style="font-size:10px;">Mobile</span> 23 Jun 2025</span>
+            <span style="font-size:18px; line-height:1.25;">Best Android Launchers for All Phones 2025</span>
+            <span style="font-size:14px; line-height:1.5; color:color-mix(in srgb, var(--color-text) 72%, transparent);">Lightweight launchers that emphasise speed and usability — from Microsoft Launcher to Nova and Pixel.</span>
+          </span>
+        </a>
+
+        <a href="https://rstechsolutions.co.uk/2025/05/12/quick-assist-built-in-remote-software/" target="_blank" rel="noopener" class="card elev-sm post-card" style="text-decoration:none; color:var(--color-text); padding:0; overflow:hidden; gap:0;">
+          <span class="post-thumb" style="display:block; position:relative; aspect-ratio:16/10; overflow:hidden; background:linear-gradient(135deg, var(--color-accent-900), var(--color-surface));"><img src="https://rstechsolutions.co.uk/wp-content/uploads/2025/05/img_7654-1.jpg" alt="Quick Assist remote software" loading="lazy" style="width:100%; height:100%; object-fit:cover; display:block;" /></span>
+          <span style="display:flex; flex-direction:column; gap:10px; padding:18px 20px 22px;">
+            <span style="display:flex; align-items:center; gap:10px; font-size:11px; letter-spacing:.05em; text-transform:uppercase; color:color-mix(in srgb, var(--color-text) 55%, transparent);"><span class="tag tag-accent" style="font-size:10px;">IT Support</span> 12 May 2025</span>
+            <span style="font-size:18px; line-height:1.25;">Quick Assist — Built-in Remote Software</span>
+            <span style="font-size:14px; line-height:1.5; color:color-mix(in srgb, var(--color-text) 72%, transparent);">Microsoft's free built-in Windows tool for secure remote assistance — no third-party software needed.</span>
+          </span>
+        </a>
+
+        <a href="https://rstechsolutions.co.uk/2025/05/11/why-network-speed-isnt-just-about-bandwidth-the-real-meaning-behind-throughput-and-latency/" target="_blank" rel="noopener" class="card elev-sm post-card" style="text-decoration:none; color:var(--color-text); padding:0; overflow:hidden; gap:0;">
+          <span class="post-thumb" style="display:block; position:relative; aspect-ratio:16/10; overflow:hidden; background:linear-gradient(135deg, var(--color-accent-900), var(--color-surface));"><img src="https://rstechsolutions.co.uk/wp-content/uploads/2025/05/8e96700a-588b-42da-9968-eab5fbe70b48-2-1.png" alt="Network speed explained" loading="lazy" style="width:100%; height:100%; object-fit:cover; display:block;" /></span>
+          <span style="display:flex; flex-direction:column; gap:10px; padding:18px 20px 22px;">
+            <span style="display:flex; align-items:center; gap:10px; font-size:11px; letter-spacing:.05em; text-transform:uppercase; color:color-mix(in srgb, var(--color-text) 55%, transparent);"><span class="tag tag-accent" style="font-size:10px;">Networking</span> 11 May 2025</span>
+            <span style="font-size:18px; line-height:1.25;">Why Network Speed Isn't Just About Bandwidth</span>
+            <span style="font-size:14px; line-height:1.5; color:color-mix(in srgb, var(--color-text) 72%, transparent);">Bandwidth, throughput and latency explained — and why each matters for a smooth connection.</span>
+          </span>
+        </a>
+
+      </div>
+    </section>
+
+  </div>
+
+  <!-- ============ CONTACT ============ -->
+  <section id="contact" style="background: radial-gradient(1000px 500px at 15% -10%, color-mix(in srgb, var(--color-accent-900) 60%, transparent), transparent 60%), color-mix(in srgb, var(--color-surface) 60%, var(--color-bg)); border-top:1px solid var(--color-divider); margin-top:clamp(24px,4vw,48px);">
+    <div style="max-width:1240px; margin:0 auto; padding: clamp(48px,6vw,84px) clamp(20px,5vw,64px); display:grid; grid-template-columns:minmax(0,6fr) minmax(0,5fr); gap:clamp(32px,5vw,64px); align-items:start;">
+
+      <div>
+        <span style="display:block; font-size:12px; letter-spacing:.09em; text-transform:uppercase; color:var(--color-accent); margin-bottom:12px;">Contact</span>
+        <h2 style="font-size:clamp(28px,3.6vw,42px); line-height:1.08; letter-spacing:-0.018em; margin:0 0 16px; max-width:16ch;">Avoid IT headaches — talk to us today</h2>
+        <p style="font-size:16px; line-height:1.6; color:color-mix(in srgb, var(--color-text) 80%, transparent); margin:0 0 32px; max-width:48ch;">Have a question or a problem that needs solving? Tell us what's going on and we'll get straight back to you.</p>
+
+        <div style="display:flex; flex-direction:column; gap:18px;">
+          <a href="tel:+441234567890" style="display:flex; align-items:center; gap:14px; color:var(--color-text);">
+            <span style="display:inline-flex; align-items:center; justify-content:center; width:44px; height:44px; border-radius:10px; background:var(--color-accent-900); color:var(--color-accent-300); font-size:22px; flex:none;"><i class="ph ph-phone"></i></span>
+            <span><span style="display:block; font-size:12px; text-transform:uppercase; letter-spacing:.06em; color:color-mix(in srgb, var(--color-text) 55%, transparent);">Call us</span><span style="font-size:16px;">01234 567 890</span></span>
+          </a>
+          <a href="mailto:hello@rstechsolutions.co.uk" style="display:flex; align-items:center; gap:14px; color:var(--color-text);">
+            <span style="display:inline-flex; align-items:center; justify-content:center; width:44px; height:44px; border-radius:10px; background:var(--color-accent-900); color:var(--color-accent-300); font-size:22px; flex:none;"><i class="ph ph-envelope-simple"></i></span>
+            <span><span style="display:block; font-size:12px; text-transform:uppercase; letter-spacing:.06em; color:color-mix(in srgb, var(--color-text) 55%, transparent);">Email</span><span style="font-size:16px;">hello@rstechsolutions.co.uk</span></span>
+          </a>
+          <div style="display:flex; align-items:center; gap:14px;">
+            <span style="display:inline-flex; align-items:center; justify-content:center; width:44px; height:44px; border-radius:10px; background:var(--color-accent-900); color:var(--color-accent-300); font-size:22px; flex:none;"><i class="ph ph-clock"></i></span>
+            <span><span style="display:block; font-size:12px; text-transform:uppercase; letter-spacing:.06em; color:color-mix(in srgb, var(--color-text) 55%, transparent);">Hours</span><span style="font-size:16px;">Mon–Fri 8am–6pm · 24/7 for contract clients</span></span>
+          </div>
+          <div style="display:flex; align-items:center; gap:14px;">
+            <span style="display:inline-flex; align-items:center; justify-content:center; width:44px; height:44px; border-radius:10px; background:var(--color-accent-900); color:var(--color-accent-300); font-size:22px; flex:none;"><i class="ph ph-map-pin"></i></span>
+            <span><span style="display:block; font-size:12px; text-transform:uppercase; letter-spacing:.06em; color:color-mix(in srgb, var(--color-text) 55%, transparent);">Coverage</span><span style="font-size:16px;">[Your area] &amp; remote across the UK</span></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="card elev-md" style="padding:clamp(22px,3vw,32px); gap:var(--space-4);">
+        <sc-if value="{{ notSubmitted }}" hint-placeholder-val="{{ true }}">
+        <form onSubmit="{{ onSubmit }}" style="display:flex; flex-direction:column; gap:16px;">
+          <div class="field"><label for="c-name">Name</label><input class="input" id="c-name" type="text" placeholder="Your name" required="required" /></div>
+          <div class="field"><label for="c-email">Email</label><input class="input" id="c-email" type="email" placeholder="you@example.com" required="required" /></div>
+          <div class="field"><label for="c-phone">Phone (optional)</label><input class="input" id="c-phone" type="tel" placeholder="01234 567 890" /></div>
+          <div class="field"><label for="c-msg">How can we help?</label><textarea class="input" id="c-msg" placeholder="Tell us what's going on…" required="required"></textarea></div>
+          <button type="submit" class="btn btn-primary btn-block" style="min-height:42px; font-size:14px;"><i class="ph ph-paper-plane-tilt"></i> Send enquiry</button>
+          <p style="font-size:12px; text-align:center; color:color-mix(in srgb, var(--color-text) 55%, transparent); margin:0;">We reply within one working hour. No spam, ever.</p>
+        </form>
+        </sc-if>
+        <sc-if value="{{ submitted }}" hint-placeholder-val="{{ false }}">
+        <div style="text-align:center; padding:24px 8px; display:flex; flex-direction:column; align-items:center; gap:14px;">
+          <span style="display:inline-flex; align-items:center; justify-content:center; width:60px; height:60px; border-radius:50%; background:var(--color-accent-900); color:var(--color-accent-300); font-size:32px;"><i class="ph ph-check-circle"></i></span>
+          <h3 style="margin:0; font-size:22px;">Thank you! ✨</h3>
+          <p style="margin:0; font-size:15px; color:color-mix(in srgb, var(--color-text) 78%, transparent); max-width:34ch;">Your message is on its way. We'll be in touch within one working hour.</p>
+          <button type="button" class="btn btn-secondary" onClick="{{ onReset }}" style="margin-top:6px;">Send another</button>
+        </div>
+        </sc-if>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer style="max-width:1240px; margin:0 auto; padding: clamp(36px,5vw,56px) clamp(20px,5vw,64px);">
+    <div style="display:flex; flex-wrap:wrap; gap:24px; justify-content:space-between; align-items:flex-start; padding-bottom:28px; border-bottom:1px solid var(--color-divider);">
+      <div style="max-width:34ch;">
+        <span class="nav-brand" style="display:flex; align-items:center; gap:9px; margin-bottom:10px;">
+          <span style="display:inline-flex; align-items:center; justify-content:center; width:28px; height:28px; border-radius:8px; border:1px solid var(--color-accent); color:var(--color-accent); font-size:15px;"><i class="ph ph-shield-check"></i></span>
+          RS Tech Solutions
+        </span>
+        <p style="font-size:14px; color:color-mix(in srgb, var(--color-text) 62%, transparent); margin:0;">Friendly, reliable IT support for homes and small businesses. Learn it, master it — or let us handle it.</p>
+      </div>
+      <div style="display:flex; gap:56px; flex-wrap:wrap;">
+        <div style="display:flex; flex-direction:column; gap:9px;">
+          <span style="font-size:11px; letter-spacing:.09em; text-transform:uppercase; color:color-mix(in srgb, var(--color-text) 50%, transparent);">Pages</span>
+          <a href="services.html" style="font-size:14px; color:color-mix(in srgb, var(--color-text) 80%, transparent);">Services</a>
+          <a href="about.html" style="font-size:14px; color:color-mix(in srgb, var(--color-text) 80%, transparent);">About</a>
+          <a href="blog.html" style="font-size:14px; color:color-mix(in srgb, var(--color-text) 80%, transparent);">Blog</a>
+          <a href="#contact" style="font-size:14px; color:color-mix(in srgb, var(--color-text) 80%, transparent);">Contact</a>
+        </div>
+        <div style="display:flex; flex-direction:column; gap:9px;">
+          <span style="font-size:11px; letter-spacing:.09em; text-transform:uppercase; color:color-mix(in srgb, var(--color-text) 50%, transparent);">Get in touch</span>
+          <a href="tel:+441234567890" style="font-size:14px; color:color-mix(in srgb, var(--color-text) 80%, transparent);">01234 567 890</a>
+          <a href="mailto:hello@rstechsolutions.co.uk" style="font-size:14px; color:color-mix(in srgb, var(--color-text) 80%, transparent);">hello@rstechsolutions.co.uk</a>
+        </div>
+      </div>
+    </div>
+    <p style="font-size:12px; color:color-mix(in srgb, var(--color-text) 45%, transparent); margin:20px 0 0;">© {{ year }} RS Tech Solutions. All rights reserved.</p>
+  </footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1280,&quot;height&quot;:3200},&quot;showStats&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Sections&quot;}}">
+class Component extends DCLogic {
+  state = { submitted: false };
+
+  renderVals() {
+    return {
+      showStats: this.props.showStats ?? true,
+      submitted: this.state.submitted,
+      notSubmitted: !this.state.submitted,
+      year: new Date().getFullYear(),
+      onSubmit: (e) => { e.preventDefault(); this.setState({ submitted: true }); },
+      onReset: () => this.setState({ submitted: false }),
+    };
+  }
+}
+</script>
+</body>
+</html>

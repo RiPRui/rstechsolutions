@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="_ds/nocturne-14b57070-fb06-4820-ae7a-51d4ed12f54d/styles.css">
+<script src="_ds/nocturne-14b57070-fb06-4820-ae7a-51d4ed12f54d/_ds_bundle.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css">
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/duotone/style.css">
+<style>
+  html { scroll-behavior: smooth; scroll-padding-top: 78px; }
+  @media (prefers-reduced-motion: reduce){ html { scroll-behavior: auto; } }
+  a { color: var(--color-accent); text-decoration: none; }
+  a:hover { color: var(--color-accent-300); }
+  .navlink { font-size:14px; color:color-mix(in srgb, var(--color-text) 78%, transparent); }
+  .navlink:hover { color:var(--color-text); }
+  .navlink[data-active="true"] { color:var(--color-accent); }
+  .post-card:hover { box-shadow: 0 0 0 1px var(--color-accent), 0 12px 34px rgba(0,0,0,.55) !important; transform: translateY(-3px); }
+  .post-card { transition: transform .18s ease, box-shadow .18s ease; }
+  .post-card:hover .post-thumb img { transform: scale(1.05); }
+  .post-thumb img { transition: transform .4s ease; }
+  .feat:hover { box-shadow: 0 0 0 1px var(--color-accent), 0 16px 44px rgba(0,0,0,.6) !important; }
+  .feat { transition: box-shadow .2s ease; }
+  .feat:hover .feat-thumb img { transform: scale(1.04); }
+  .feat-thumb img { transition: transform .5s ease; }
+  @media (max-width:760px){ .feat { grid-template-columns:1fr !important; } }
+</style>
+</helmet>
+
+<div style="min-height:100vh; background: radial-gradient(1100px 640px at 86% -180px, color-mix(in srgb, var(--color-accent-900) 80%, transparent), transparent 60%), radial-gradient(1000px 760px at -8% 104%, color-mix(in srgb, black 34%, transparent), transparent 55%), var(--color-bg); color: var(--color-text); font-family: var(--font-body);">
+
+  <!-- ============ NAV ============ -->
+  <nav class="nav" style="position:sticky; top:0; z-index:30; max-width:1240px; margin:0 auto; padding:12px clamp(20px,5vw,64px); backdrop-filter:blur(12px); background:color-mix(in srgb, var(--color-bg) 78%, transparent); border-bottom:1px solid var(--color-divider);">
+    <a href="index.html" class="nav-brand" style="display:flex; align-items:center; gap:9px; color:var(--color-text);">
+      <span style="display:inline-flex; align-items:center; justify-content:center; width:30px; height:30px; border-radius:8px; border:1px solid var(--color-accent); color:var(--color-accent); font-size:16px;"><i class="ph ph-shield-check"></i></span>
+      RS Tech Solutions
+    </a>
+    <a href="index.html" class="navlink">Home</a>
+    <a href="services.html" class="navlink">Services</a>
+    <a href="about.html" class="navlink">About</a>
+    <a href="blog.html" class="navlink" data-active="true">Blog</a>
+    <a href="index.html#contact" class="btn btn-primary" style="gap:6px; white-space:nowrap;"><i class="ph ph-phone-call"></i> Get in touch</a>
+  </nav>
+
+  <div style="max-width:1240px; margin:0 auto; padding:0 clamp(20px,5vw,64px);">
+
+    <!-- ============ PAGE HEADER ============ -->
+    <section style="padding: clamp(48px,7vw,88px) 0 clamp(28px,4vw,44px); max-width:760px;">
+      <span style="display:inline-flex; align-items:center; gap:8px; font-size:12px; letter-spacing:.08em; text-transform:uppercase; color:var(--color-accent); margin-bottom:20px;">
+        <span style="width:32px; height:1px; background:var(--color-accent);"></span> Blog
+      </span>
+      <h1 style="font-size:clamp(34px,4.8vw,60px); line-height:1.05; letter-spacing:-0.02em; margin:0 0 20px;">Practical IT advice &amp; technology insights.</h1>
+      <p style="font-size:clamp(16px,1.6vw,20px); line-height:1.55; color:color-mix(in srgb, var(--color-text) 82%, transparent); margin:0;">IT support guides, cybersecurity tips, productivity strategies and industry trends — knowledge to help you stay informed, secure and productive. Knowledge is your best tool.</p>
+    </section>
+
+    <!-- ============ FEATURED POST ============ -->
+    <a href="{{ featured.url }}" target="_blank" rel="noopener" class="card elev-md feat" style="text-decoration:none; color:var(--color-text); padding:0; overflow:hidden; gap:0; display:grid; grid-template-columns:minmax(0,1.15fr) minmax(0,1fr); margin-bottom:clamp(32px,5vw,56px);">
+      <span class="feat-thumb" style="display:block; position:relative; min-height:280px; overflow:hidden; background:linear-gradient(135deg, var(--color-accent-900), var(--color-surface));"><img src="{{ featured.img }}" alt="{{ featured.title }}" loading="lazy" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; display:block;" /></span>
+      <span style="display:flex; flex-direction:column; gap:16px; padding:clamp(26px,3.5vw,44px); align-self:center;">
+        <span style="display:flex; align-items:center; gap:10px; font-size:11px; letter-spacing:.05em; text-transform:uppercase; color:color-mix(in srgb, var(--color-text) 55%, transparent);"><span class="tag tag-accent">Latest</span> <span class="tag tag-outline">{{ featured.category }}</span> {{ featured.date }}</span>
+        <span style="font-size:clamp(24px,2.6vw,34px); line-height:1.15; letter-spacing:-0.015em;">{{ featured.title }}</span>
+        <span style="font-size:16px; line-height:1.6; color:color-mix(in srgb, var(--color-text) 76%, transparent);">{{ featured.excerpt }}</span>
+        <span class="btn btn-ghost" style="align-self:flex-start; padding-left:0;">Read article <i class="ph ph-arrow-right"></i></span>
+      </span>
+    </a>
+
+    <!-- ============ POST GRID ============ -->
+    <section style="padding-bottom: clamp(40px,6vw,72px);">
+      <div style="display:grid; grid-template-columns:repeat(auto-fill, minmax(300px,1fr)); gap:20px;">
+        <sc-for list="{{ rest }}" as="p" hint-placeholder-count="9">
+          <a href="{{ p.url }}" target="_blank" rel="noopener" class="card elev-sm post-card" style="text-decoration:none; color:var(--color-text); padding:0; overflow:hidden; gap:0;">
+            <span class="post-thumb" style="display:block; position:relative; aspect-ratio:16/10; overflow:hidden; background:linear-gradient(135deg, var(--color-accent-900), var(--color-surface));"><img src="{{ p.img }}" alt="{{ p.title }}" loading="lazy" style="width:100%; height:100%; object-fit:cover; display:block;" /></span>
+            <span style="display:flex; flex-direction:column; gap:10px; padding:18px 20px 22px;">
+              <span style="display:flex; align-items:center; gap:10px; font-size:11px; letter-spacing:.05em; text-transform:uppercase; color:color-mix(in srgb, var(--color-text) 55%, transparent);"><span class="tag tag-accent" style="font-size:10px;">{{ p.category }}</span> {{ p.date }}</span>
+              <span style="font-size:18px; line-height:1.25;">{{ p.title }}</span>
+              <span style="font-size:14px; line-height:1.5; color:color-mix(in srgb, var(--color-text) 72%, transparent);">{{ p.excerpt }}</span>
+            </span>
+          </a>
+        </sc-for>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- ============ CTA BAND ============ -->
+  <section style="background: radial-gradient(900px 420px at 85% -40%, color-mix(in srgb, var(--color-section-glow) 70%, transparent), transparent 64%), var(--color-section);">
+    <div style="max-width:1240px; margin:0 auto; padding: clamp(40px,6vw,72px) clamp(20px,5vw,64px); display:flex; flex-wrap:wrap; gap:24px; align-items:center; justify-content:space-between;">
+      <div style="max-width:44ch;">
+        <h2 style="font-size:clamp(26px,3.2vw,38px); line-height:1.1; letter-spacing:-0.015em; margin:0 0 10px;">Got a tech question of your own?</h2>
+        <p style="font-size:16px; line-height:1.55; color:color-mix(in srgb, var(--color-text) 82%, transparent); margin:0;">Reading is one thing — sometimes you just want it sorted. Drop us a line and we'll help.</p>
+      </div>
+      <a href="index.html#contact" class="btn btn-primary" style="font-size:14px; padding:12px 22px;"><i class="ph ph-paper-plane-tilt"></i> Get in touch</a>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer style="max-width:1240px; margin:0 auto; padding: clamp(36px,5vw,56px) clamp(20px,5vw,64px);">
+    <div style="display:flex; flex-wrap:wrap; gap:24px; justify-content:space-between; align-items:flex-start; padding-bottom:28px; border-bottom:1px solid var(--color-divider);">
+      <div style="max-width:34ch;">
+        <span class="nav-brand" style="display:flex; align-items:center; gap:9px; margin-bottom:10px;">
+          <span style="display:inline-flex; align-items:center; justify-content:center; width:28px; height:28px; border-radius:8px; border:1px solid var(--color-accent); color:var(--color-accent); font-size:15px;"><i class="ph ph-shield-check"></i></span>
+          RS Tech Solutions
+        </span>
+        <p style="font-size:14px; color:color-mix(in srgb, var(--color-text) 62%, transparent); margin:0;">Friendly, reliable IT support for homes and small businesses. Learn it, master it — or let us handle it.</p>
+      </div>
+      <div style="display:flex; gap:56px; flex-wrap:wrap;">
+        <div style="display:flex; flex-direction:column; gap:9px;">
+          <span style="font-size:11px; letter-spacing:.09em; text-transform:uppercase; color:color-mix(in srgb, var(--color-text) 50%, transparent);">Pages</span>
+          <a href="services.html" style="font-size:14px; color:color-mix(in srgb, var(--color-text) 80%, transparent);">Services</a>
+          <a href="about.html" style="font-size:14px; color:color-mix(in srgb, var(--color-text) 80%, transparent);">About</a>
+          <a href="blog.html" style="font-size:14px; color:color-mix(in srgb, var(--color-text) 80%, transparent);">Blog</a>
+          <a href="index.html#contact" style="font-size:14px; color:color-mix(in srgb, var(--color-text) 80%, transparent);">Contact</a>
+        </div>
+        <div style="display:flex; flex-direction:column; gap:9px;">
+          <span style="font-size:11px; letter-spacing:.09em; text-transform:uppercase; color:color-mix(in srgb, var(--color-text) 50%, transparent);">Get in touch</span>
+          <a href="tel:+441234567890" style="font-size:14px; color:color-mix(in srgb, var(--color-text) 80%, transparent);">01234 567 890</a>
+          <a href="mailto:hello@rstechsolutions.co.uk" style="font-size:14px; color:color-mix(in srgb, var(--color-text) 80%, transparent);">hello@rstechsolutions.co.uk</a>
+        </div>
+      </div>
+    </div>
+    <p style="font-size:12px; color:color-mix(in srgb, var(--color-text) 45%, transparent); margin:20px 0 0;">© {{ year }} RS Tech Solutions. All rights reserved.</p>
+  </footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1280,&quot;height&quot;:2600}}">
+class Component extends DCLogic {
+  renderVals() {
+    const B = "https://rstechsolutions.co.uk";
+    const posts = [
+      { title:"Best Android Launchers for All Phones 2025", date:"23 Jun 2025", category:"Mobile",
+        excerpt:"Lightweight launchers that emphasise speed and usability — from Microsoft Launcher to Nova and Pixel.",
+        img:B+"/wp-content/uploads/2025/06/image-2.png", url:B+"/2025/06/23/best-android-launchers-for-all-phones-2025/" },
+      { title:"Quick Assist — Built-in Remote Software", date:"12 May 2025", category:"IT Support",
+        excerpt:"Microsoft's free, built-in Windows tool for fast, secure remote assistance — no third-party software needed.",
+        img:B+"/wp-content/uploads/2025/05/img_7654-1.jpg", url:B+"/2025/05/12/quick-assist-built-in-remote-software/" },
+      { title:"Why Network Speed Isn't Just About Bandwidth", date:"11 May 2025", category:"Networking",
+        excerpt:"Bandwidth, throughput and latency explained — and why each one matters for a smooth connection.",
+        img:B+"/wp-content/uploads/2025/05/8e96700a-588b-42da-9968-eab5fbe70b48-2-1.png", url:B+"/2025/05/11/why-network-speed-isnt-just-about-bandwidth-the-real-meaning-behind-throughput-and-latency/" },
+      { title:"Home Assistant: Automate Your Daily Routines", date:"29 Apr 2025", category:"Smart Home",
+        excerpt:"Bring your smart home together and automate the everyday with a tailored Home Assistant setup.",
+        img:B+"/wp-content/uploads/2025/04/image-1.png", url:B+"/2025/04/29/automating-every-minute-of-every-day/" },
+      { title:"Connect iPhone to On-Premise Exchange", date:"22 Apr 2025", category:"Guide",
+        excerpt:"A clear, step-by-step guide to setting up on-premise Exchange email on your iPhone.",
+        img:B+"/wp-content/uploads/2025/04/image-3.png", url:B+"/2025/04/22/how-to-connect-your-iphone-to-on-premise-exchange-email-2025-guide/" },
+      { title:"Best IT Troubleshooting Techniques", date:"16 Apr 2025", category:"IT Support",
+        excerpt:"A practical, step-by-step approach to diagnosing and fixing common IT problems.",
+        img:B+"/wp-content/uploads/2025/04/image-2.png", url:B+"/2025/04/16/best-it-troubleshooting-techniques-a-step-by-step-guide/" },
+      { title:"What If Life Had a Business Continuity Plan?", date:"15 Apr 2025", category:"Business",
+        excerpt:"Lessons from business continuity planning, applied to everyday resilience.",
+        img:B+"/wp-content/uploads/2025/04/image.png", url:B+"/2025/04/15/title-what-if-life-had-a-business-continuity-plan/" },
+      { title:"Boost Your Wi-Fi Speed by 25% With This Hidden Trick", date:"5 Apr 2025", category:"Networking",
+        excerpt:"A hidden Windows setting that can noticeably speed up your internet connection.",
+        img:B+"/wp-content/uploads/2025/04/image-5.png", url:B+"/2025/04/05/turbocharge-your-internet-a-hidden-windows-trick-to-boost-speed-by-25-sorry-mac-fans/" },
+      { title:"Understanding Spanning Tree Protocol (STP)", date:"2 Apr 2025", category:"Networking",
+        excerpt:"How STP prevents loops and keeps switched networks stable and reliable.",
+        img:B+"/wp-content/uploads/2025/04/image-4.png", url:B+"/2025/04/02/understanding-spanning-tree-protocol-stp-preventing-network-loops/" },
+      { title:"Why Does a VLAN Have an IP Address?", date:"26 Mar 2025", category:"Networking",
+        excerpt:"What a VLAN's IP address actually does, explained simply.",
+        img:B+"/wp-content/uploads/2025/03/ipv4-anatomy-min.png", url:B+"/2025/03/26/why-does-a-vlan-have-an-ip-address/" },
+      { title:"Networking Essentials for Cyber Security", date:"24 Mar 2025", category:"Security",
+        excerpt:"The networking fundamentals that every good security setup relies on.",
+        img:B+"/wp-content/uploads/2025/03/image-1.png", url:B+"/2025/03/24/networking-essentials-for-cyber-security/" },
+      { title:"Configuring Ports on HP / Aruba Switches", date:"23 Mar 2025", category:"Networking",
+        excerpt:"A hands-on guide to port configuration on HP and Aruba switches.",
+        img:B+"/wp-content/uploads/2025/03/image-3.png", url:B+"/2025/03/23/configuring-ports-on-hp-aruba-switches/" },
+    ];
+    return {
+      year: new Date().getFullYear(),
+      featured: posts[0],
+      rest: posts.slice(1),
+    };
+  }
+}
+</script>
+</body>
+</html>
