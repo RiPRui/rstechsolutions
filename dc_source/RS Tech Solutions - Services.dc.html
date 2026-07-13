@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="_ds/nocturne-14b57070-fb06-4820-ae7a-51d4ed12f54d/styles.css">
+<script src="_ds/nocturne-14b57070-fb06-4820-ae7a-51d4ed12f54d/_ds_bundle.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css">
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/duotone/style.css">
+<style>
+  html { scroll-behavior: smooth; scroll-padding-top: 78px; }
+  @media (prefers-reduced-motion: reduce){ html { scroll-behavior: auto; } }
+  a { color: var(--color-accent); text-decoration: none; }
+  a:hover { color: var(--color-accent-300); }
+  .navlink { font-size:14px; color:color-mix(in srgb, var(--color-text) 78%, transparent); }
+  .navlink:hover { color:var(--color-text); }
+  .navlink[data-active="true"] { color:var(--color-accent); }
+  .svc-row { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:clamp(28px,4vw,64px); align-items:center; padding:clamp(32px,5vw,64px) 0; border-top:1px solid var(--color-divider); }
+  .svc-row:first-child { border-top:none; }
+  .svc-list > .svc-row:nth-child(even) .svc-visual { order:-1; }
+  @media (max-width:760px){ .svc-row { grid-template-columns:1fr; } .svc-list > .svc-row:nth-child(even) .svc-visual { order:0; } }
+  .svc-visual:hover i { transform:scale(1.06) rotate(-3deg); }
+  .svc-visual i { transition:transform .3s ease; }
+</style>
+</helmet>
+
+<div style="min-height:100vh; background: radial-gradient(1100px 640px at 86% -180px, color-mix(in srgb, var(--color-accent-900) 80%, transparent), transparent 60%), radial-gradient(1000px 760px at -8% 104%, color-mix(in srgb, black 34%, transparent), transparent 55%), var(--color-bg); color: var(--color-text); font-family: var(--font-body);">
+
+  <!-- ============ NAV ============ -->
+  <nav class="nav" style="position:sticky; top:0; z-index:30; max-width:1240px; margin:0 auto; padding:12px clamp(20px,5vw,64px); backdrop-filter:blur(12px); background:color-mix(in srgb, var(--color-bg) 78%, transparent); border-bottom:1px solid var(--color-divider);">
+    <a href="RS%20Tech%20Solutions%20-%20Home.dc.html" class="nav-brand" style="display:flex; align-items:center; gap:9px; color:var(--color-text);">
+      <span style="display:inline-flex; align-items:center; justify-content:center; width:30px; height:30px; border-radius:8px; border:1px solid var(--color-accent); color:var(--color-accent); font-size:16px;"><i class="ph ph-shield-check"></i></span>
+      RS Tech Solutions
+    </a>
+    <a href="RS%20Tech%20Solutions%20-%20Home.dc.html" class="navlink">Home</a>
+    <a href="RS%20Tech%20Solutions%20-%20Services.dc.html" class="navlink" data-active="true">Services</a>
+    <a href="RS%20Tech%20Solutions%20-%20About.dc.html" class="navlink">About</a>
+    <a href="RS%20Tech%20Solutions%20-%20Blog.dc.html" class="navlink">Blog</a>
+    <a href="RS%20Tech%20Solutions%20-%20Home.dc.html#contact" class="btn btn-primary" style="gap:6px; white-space:nowrap;"><i class="ph ph-phone-call"></i> Get in touch</a>
+  </nav>
+
+  <div style="max-width:1240px; margin:0 auto; padding:0 clamp(20px,5vw,64px);">
+
+    <!-- ============ PAGE HERO ============ -->
+    <section style="padding: clamp(48px,7vw,96px) 0 clamp(24px,4vw,40px); display:grid; grid-template-columns:minmax(0,1.3fr) minmax(0,1fr); gap:clamp(32px,5vw,64px); align-items:center;">
+      <div style="max-width:620px;">
+        <span style="display:inline-flex; align-items:center; gap:8px; font-size:12px; letter-spacing:.08em; text-transform:uppercase; color:var(--color-accent); margin-bottom:20px;">
+          <span style="width:32px; height:1px; background:var(--color-accent);"></span> Services
+        </span>
+        <h1 style="font-size:clamp(34px,4.8vw,60px); line-height:1.05; letter-spacing:-0.02em; margin:0 0 22px;">Twelve services, one team you can trust.</h1>
+        <p style="font-size:clamp(16px,1.6vw,20px); line-height:1.55; max-width:52ch; color:color-mix(in srgb, var(--color-text) 82%, transparent); margin:0 0 28px;">From round-the-clock remote support to networks, hosting, telephony and cyber security — pick what you need, or tell us the problem and we'll point you the right way.</p>
+        <a href="RS%20Tech%20Solutions%20-%20Home.dc.html#contact" class="btn btn-primary" style="font-size:14px; padding:11px 20px;"><i class="ph ph-chat-circle-dots"></i> Get a free callback</a>
+      </div>
+      <figure class="lighten" style="margin:0;">
+        <div style="position:relative; width:100%; aspect-ratio:5/4; border-radius:var(--radius-lg); overflow:hidden; box-shadow:var(--shadow-lg); border:1px solid var(--color-divider);">
+          <x-import component-from-global-scope="image-slot" from="./image-slot.js" id="services-hero" shape="rect" fit="cover" placeholder="Drop a photo (rack, workbench, or on-site work)" hint-size="100%,100%"></x-import>
+        </div>
+      </figure>
+    </section>
+
+    <!-- ============ SERVICE ROWS ============ -->
+    <div class="svc-list">
+      <sc-for list="{{ services }}" as="s" hint-placeholder-count="6">
+        <section id="{{ s.id }}" class="svc-row">
+          <div class="svc-body">
+            <span style="display:inline-flex; align-items:center; gap:8px; font-size:11px; letter-spacing:.09em; text-transform:uppercase; color:var(--color-accent); margin-bottom:14px;">{{ s.kicker }}</span>
+            <h2 style="font-size:clamp(24px,3vw,34px); line-height:1.12; letter-spacing:-0.015em; margin:0 0 14px;">{{ s.title }}</h2>
+            <p style="font-size:16px; line-height:1.6; color:color-mix(in srgb, var(--color-text) 80%, transparent); margin:0 0 22px; max-width:50ch;">{{ s.tagline }}</p>
+            <ul style="list-style:none; margin:0 0 26px; padding:0; display:grid; grid-template-columns:repeat(auto-fill, minmax(230px,1fr)); gap:10px 20px;">
+              <sc-for list="{{ s.bullets }}" as="b" hint-placeholder-count="5">
+                <li style="display:flex; align-items:flex-start; gap:10px; font-size:14px; line-height:1.45; color:color-mix(in srgb, var(--color-text) 78%, transparent);"><i class="ph ph-check" style="color:var(--color-accent); font-size:16px; margin-top:2px; flex:none;"></i> {{ b }}</li>
+              </sc-for>
+            </ul>
+            <a href="RS%20Tech%20Solutions%20-%20Home.dc.html#contact" class="btn btn-secondary" style="font-size:14px; padding:10px 18px;">Talk to us about this <i class="ph ph-arrow-right"></i></a>
+          </div>
+          <div class="svc-visual" style="position:relative; aspect-ratio:4/3; border-radius:var(--radius-lg); overflow:hidden; border:1px solid var(--color-divider); background:linear-gradient(150deg, var(--color-accent-900), color-mix(in srgb, var(--color-surface) 70%, var(--color-bg))); box-shadow:var(--shadow-md); display:flex; align-items:center; justify-content:center;">
+            <span aria-hidden="true" style="position:absolute; top:-20px; right:6px; font-size:clamp(120px,18vw,200px); line-height:1; font-weight:600; color:color-mix(in srgb, var(--color-accent) 12%, transparent); letter-spacing:-0.04em;">{{ s.num }}</span>
+            <i class="ph-duotone {{ s.icon }}" style="font-size:clamp(64px,9vw,104px); color:var(--color-accent-300); position:relative;"></i>
+          </div>
+        </section>
+      </sc-for>
+    </div>
+
+  </div>
+
+  <!-- ============ CTA BAND ============ -->
+  <section style="background: radial-gradient(900px 420px at 85% -40%, color-mix(in srgb, var(--color-section-glow) 70%, transparent), transparent 64%), var(--color-section); margin-top:clamp(32px,5vw,64px);">
+    <div style="max-width:1240px; margin:0 auto; padding: clamp(40px,6vw,72px) clamp(20px,5vw,64px); display:flex; flex-wrap:wrap; gap:24px; align-items:center; justify-content:space-between;">
+      <div style="max-width:44ch;">
+        <h2 style="font-size:clamp(26px,3.2vw,38px); line-height:1.1; letter-spacing:-0.015em; margin:0 0 10px;">Not sure which service you need?</h2>
+        <p style="font-size:16px; line-height:1.55; color:color-mix(in srgb, var(--color-text) 82%, transparent); margin:0;">Tell us the problem in plain English. We'll point you to the right fix and reply within one working hour.</p>
+      </div>
+      <div style="display:flex; gap:12px; flex-wrap:wrap;">
+        <a href="RS%20Tech%20Solutions%20-%20Home.dc.html#contact" class="btn btn-primary" style="font-size:14px; padding:12px 22px;"><i class="ph ph-paper-plane-tilt"></i> Get in touch</a>
+        <a href="tel:+441234567890" class="btn btn-secondary" style="font-size:14px; padding:12px 22px;"><i class="ph ph-phone"></i> 01234 567 890</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer style="max-width:1240px; margin:0 auto; padding: clamp(36px,5vw,56px) clamp(20px,5vw,64px);">
+    <div style="display:flex; flex-wrap:wrap; gap:24px; justify-content:space-between; align-items:flex-start; padding-bottom:28px; border-bottom:1px solid var(--color-divider);">
+      <div style="max-width:34ch;">
+        <span class="nav-brand" style="display:flex; align-items:center; gap:9px; margin-bottom:10px;">
+          <span style="display:inline-flex; align-items:center; justify-content:center; width:28px; height:28px; border-radius:8px; border:1px solid var(--color-accent); color:var(--color-accent); font-size:15px;"><i class="ph ph-shield-check"></i></span>
+          RS Tech Solutions
+        </span>
+        <p style="font-size:14px; color:color-mix(in srgb, var(--color-text) 62%, transparent); margin:0;">Friendly, reliable IT support for homes and small businesses. Learn it, master it — or let us handle it.</p>
+      </div>
+      <div style="display:flex; gap:56px; flex-wrap:wrap;">
+        <div style="display:flex; flex-direction:column; gap:9px;">
+          <span style="font-size:11px; letter-spacing:.09em; text-transform:uppercase; color:color-mix(in srgb, var(--color-text) 50%, transparent);">Pages</span>
+          <a href="RS%20Tech%20Solutions%20-%20Services.dc.html" style="font-size:14px; color:color-mix(in srgb, var(--color-text) 80%, transparent);">Services</a>
+          <a href="RS%20Tech%20Solutions%20-%20About.dc.html" style="font-size:14px; color:color-mix(in srgb, var(--color-text) 80%, transparent);">About</a>
+          <a href="RS%20Tech%20Solutions%20-%20Blog.dc.html" style="font-size:14px; color:color-mix(in srgb, var(--color-text) 80%, transparent);">Blog</a>
+          <a href="RS%20Tech%20Solutions%20-%20Home.dc.html#contact" style="font-size:14px; color:color-mix(in srgb, var(--color-text) 80%, transparent);">Contact</a>
+        </div>
+        <div style="display:flex; flex-direction:column; gap:9px;">
+          <span style="font-size:11px; letter-spacing:.09em; text-transform:uppercase; color:color-mix(in srgb, var(--color-text) 50%, transparent);">Get in touch</span>
+          <a href="tel:+441234567890" style="font-size:14px; color:color-mix(in srgb, var(--color-text) 80%, transparent);">01234 567 890</a>
+          <a href="mailto:hello@rstechsolutions.co.uk" style="font-size:14px; color:color-mix(in srgb, var(--color-text) 80%, transparent);">hello@rstechsolutions.co.uk</a>
+        </div>
+      </div>
+    </div>
+    <p style="font-size:12px; color:color-mix(in srgb, var(--color-text) 45%, transparent); margin:20px 0 0;">© {{ year }} RS Tech Solutions. All rights reserved.</p>
+  </footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1280,&quot;height&quot;:3600}}">
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      year: new Date().getFullYear(),
+      services: [
+        { id:"remote-support", num:"01", icon:"ph-headset", kicker:"Support", title:"24/7 Remote Support",
+          tagline:"Round-the-clock remote IT support tailored to your needs. With a support contract, expert assistance is just a click away — no waiting for an onsite visit.",
+          bullets:["24/7 remote assistance (contract)","One-off remote sessions","PC, Mac & mobile troubleshooting","Software install & configuration","Network diagnostics","Security & patch management"] },
+        { id:"website-development", num:"02", icon:"ph-code", kicker:"Web", title:"Website Development",
+          tagline:"Responsive, modern websites that reflect your brand and goals — from a personal blog to a complex business portal.",
+          bullets:["Custom design & development","WordPress, HTML, CSS & JS","SEO optimisation","E-commerce stores","Site audits & redesigns"] },
+        { id:"website-hosting", num:"03", icon:"ph-cloud-check", kicker:"Hosting", title:"Website Hosting",
+          tagline:"Secure, reliable hosting for any size site — from simple static pages to complex e-commerce systems.",
+          bullets:["Shared, VPS & dedicated","Daily backups & uptime monitoring","SSL certificate installation","Email hosting","Managed hosting with support"] },
+        { id:"cyber-essentials", num:"04", icon:"ph-shield-check", kicker:"Security", title:"Cyber Essentials",
+          tagline:"Guided certification that protects your business and helps you win more work — we handle the whole process with you.",
+          bullets:["Gap analysis & compliance checks","Remediation guidance","Documentation preparation","Self-assessment or Plus support","Post-certification support"] },
+        { id:"home-network", num:"05", icon:"ph-wifi-high", kicker:"Networks", title:"Home Network Installations",
+          tagline:"Optimise your home connectivity with professional installation and support that just works, in every room.",
+          bullets:["Wi-Fi design & installation","Ubiquiti UniFi setup","Router & access point install","Ongoing home support","Troubleshooting & speed optimisation"] },
+        { id:"office-365", num:"06", icon:"ph-microsoft-outlook-logo", kicker:"Microsoft 365", title:"Office 365 Support",
+          tagline:"Expert support for Microsoft 365 environments to improve productivity and security across your team.",
+          bullets:["365 setup & administration","SharePoint sites & permissions","Power Automate configuration","Email migration & support","User training & documentation"] },
+        { id:"phone-lines", num:"07", icon:"ph-phone-call", kicker:"Telephony", title:"Phone Line Installations",
+          tagline:"Commercial and professional phone line installation and hosting for small to medium-sized businesses.",
+          bullets:["Multi-line commercial systems","SIP & VoIP solutions","Hosted PBX services","Number porting & call routing","Call recording & analytics"] },
+        { id:"cabling", num:"08", icon:"ph-plugs-connected", kicker:"Infrastructure", title:"Structured Cabling",
+          tagline:"Structured cabling for residential and business environments, using the latest standards and fully certified.",
+          bullets:["RJ45 termination","CAT5e & CAT6 installations","Patch panel setup","Network diagnostics","Testing & certification"] },
+        { id:"telephony", num:"09", icon:"ph-phone-outgoing", kicker:"Voice", title:"Telephony Solutions",
+          tagline:"Reliable and scalable voice solutions for businesses of all sizes, built around how your team actually works.",
+          bullets:["Cloud-hosted VoIP","Mobile integration","Microsoft Teams telephony","IVR setup","Telephony security & monitoring"] },
+        { id:"game-servers", num:"10", icon:"ph-game-controller", kicker:"Hosting", title:"Game Server Hosting",
+          tagline:"Host your gaming community with low-latency, high-performance servers for a range of popular platforms.",
+          bullets:["Minecraft, ARK, Rust & more","Customisation & mods","Anti-DDoS protection","Control panel access","Auto backups & monitoring"] },
+        { id:"buy-back", num:"11", icon:"ph-recycle", kicker:"Sustainability", title:"IT Equipment Buy-Back",
+          tagline:"Sustainable disposal and recycling of your unwanted IT hardware, with secure certified data destruction.",
+          bullets:["Purchase of decommissioned kit","Secure data destruction & certificate","Asset auditing","Environmentally responsible recycling"] },
+        { id:"home-assistant", num:"12", icon:"ph-house-line", kicker:"Smart Home", title:"Home Assistant Installer",
+          tagline:"Take control of your smart home with a tailored Home Assistant setup that ties all your devices together.",
+          bullets:["Tailored installation","Device & sensor integration","Automations & dashboards","Voice control","Ongoing support"] },
+      ],
+    };
+  }
+}
+</script>
+</body>
+</html>

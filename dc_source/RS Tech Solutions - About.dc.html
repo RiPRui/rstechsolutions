@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="_ds/nocturne-14b57070-fb06-4820-ae7a-51d4ed12f54d/styles.css">
+<script src="_ds/nocturne-14b57070-fb06-4820-ae7a-51d4ed12f54d/_ds_bundle.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css">
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/duotone/style.css">
+<style>
+  html { scroll-behavior: smooth; scroll-padding-top: 78px; }
+  @media (prefers-reduced-motion: reduce){ html { scroll-behavior: auto; } }
+  a { color: var(--color-accent); text-decoration: none; }
+  a:hover { color: var(--color-accent-300); }
+  .navlink { font-size:14px; color:color-mix(in srgb, var(--color-text) 78%, transparent); }
+  .navlink:hover { color:var(--color-text); }
+  .navlink[data-active="true"] { color:var(--color-accent); }
+</style>
+</helmet>
+
+<div style="min-height:100vh; background: radial-gradient(1100px 640px at 86% -180px, color-mix(in srgb, var(--color-accent-900) 80%, transparent), transparent 60%), radial-gradient(1000px 760px at -8% 104%, color-mix(in srgb, black 34%, transparent), transparent 55%), var(--color-bg); color: var(--color-text); font-family: var(--font-body);">
+
+  <!-- ============ NAV ============ -->
+  <nav class="nav" style="position:sticky; top:0; z-index:30; max-width:1240px; margin:0 auto; padding:12px clamp(20px,5vw,64px); backdrop-filter:blur(12px); background:color-mix(in srgb, var(--color-bg) 78%, transparent); border-bottom:1px solid var(--color-divider);">
+    <a href="RS%20Tech%20Solutions%20-%20Home.dc.html" class="nav-brand" style="display:flex; align-items:center; gap:9px; color:var(--color-text);">
+      <span style="display:inline-flex; align-items:center; justify-content:center; width:30px; height:30px; border-radius:8px; border:1px solid var(--color-accent); color:var(--color-accent); font-size:16px;"><i class="ph ph-shield-check"></i></span>
+      RS Tech Solutions
+    </a>
+    <a href="RS%20Tech%20Solutions%20-%20Home.dc.html" class="navlink">Home</a>
+    <a href="RS%20Tech%20Solutions%20-%20Services.dc.html" class="navlink">Services</a>
+    <a href="RS%20Tech%20Solutions%20-%20About.dc.html" class="navlink" data-active="true">About</a>
+    <a href="RS%20Tech%20Solutions%20-%20Blog.dc.html" class="navlink">Blog</a>
+    <a href="RS%20Tech%20Solutions%20-%20Home.dc.html#contact" class="btn btn-primary" style="gap:6px; white-space:nowrap;"><i class="ph ph-phone-call"></i> Get in touch</a>
+  </nav>
+
+  <div style="max-width:1240px; margin:0 auto; padding:0 clamp(20px,5vw,64px);">
+
+    <!-- ============ ABOUT HERO ============ -->
+    <section style="padding: clamp(48px,7vw,96px) 0 clamp(32px,5vw,56px); display:grid; grid-template-columns:minmax(0,7fr) minmax(0,5fr); gap:clamp(32px,5vw,72px); align-items:center;">
+      <div>
+        <span style="display:inline-flex; align-items:center; gap:8px; font-size:12px; letter-spacing:.08em; text-transform:uppercase; color:var(--color-accent); margin-bottom:20px;">
+          <span style="width:32px; height:1px; background:var(--color-accent);"></span> About
+        </span>
+        <h1 style="font-size:clamp(34px,4.8vw,60px); line-height:1.05; letter-spacing:-0.02em; margin:0 0 22px;">Hi, I'm Rui.</h1>
+        <p style="font-size:clamp(17px,1.7vw,21px); line-height:1.55; color:color-mix(in srgb, var(--color-text) 84%, transparent); margin:0 0 16px; max-width:52ch;">A passionate tech enthusiast with a knack for simplifying complex technology, and years of hands-on experience in tech support and IT management.</p>
+        <p style="font-size:16px; line-height:1.6; color:color-mix(in srgb, var(--color-text) 78%, transparent); margin:0; max-width:52ch;">I'm dedicated to helping individuals and small businesses navigate the ever-evolving world of technology — making it accessible, understandable and empowering for everyone.</p>
+      </div>
+      <figure style="margin:0;">
+        <div style="position:relative; width:100%; aspect-ratio:4/5; border-radius:var(--radius-lg); overflow:hidden; box-shadow:var(--shadow-lg); border:1px solid var(--color-divider); background:linear-gradient(150deg, var(--color-accent-900), var(--color-surface));">
+          <img src="https://rstechsolutions.co.uk/wp-content/uploads/2025/03/headshot12aeccba-a2e6-4917-9bd8-ac52020f51db_1_105_c-enhance-3.9x-faceai-sharpen.jpeg" alt="Rui, owner of RS Tech Solutions" loading="lazy" style="width:100%; height:100%; object-fit:cover; display:block;" />
+        </div>
+      </figure>
+    </section>
+
+    <!-- ============ STORY ============ -->
+    <section style="padding: clamp(32px,5vw,56px) 0; border-top:1px solid var(--color-divider); display:grid; grid-template-columns:minmax(0,5fr) minmax(0,7fr); gap:clamp(28px,5vw,64px);">
+      <h2 style="font-size:clamp(24px,3vw,34px); line-height:1.12; letter-spacing:-0.015em; margin:0; max-width:16ch;">Learn it. Master it. Or let us handle it.</h2>
+      <div style="max-width:60ch;">
+        <p style="font-size:16px; line-height:1.7; color:color-mix(in srgb, var(--color-text) 82%, transparent); margin:0 0 16px;">RS Tech Solutions started from a simple idea: good technology support shouldn't come with a language barrier. Too many people get talked down to, sold things they don't need, or left waiting for a callback that never comes.</p>
+        <p style="font-size:16px; line-height:1.7; color:color-mix(in srgb, var(--color-text) 82%, transparent); margin:0 0 16px;">So I set out to do it differently — practical, honest advice in plain English, whether you want to understand a problem yourself or hand it over entirely. From a one-off fix to a full support contract, the aim is the same: keep your technology working so you don't have to think about it.</p>
+        <p style="font-size:16px; line-height:1.7; color:color-mix(in srgb, var(--color-text) 82%, transparent); margin:0;">Alongside the day-to-day work, I write guides and tips on the blog — sharing what I learn so you can stay informed, secure and productive.</p>
+      </div>
+    </section>
+
+    <!-- ============ VALUES ============ -->
+    <section style="padding: clamp(36px,5vw,64px) 0; border-top:1px solid var(--color-divider);">
+      <span style="display:block; font-size:12px; letter-spacing:.09em; text-transform:uppercase; color:var(--color-accent); margin-bottom:12px;">What you can expect</span>
+      <h2 style="font-size:clamp(26px,3.2vw,38px); line-height:1.1; letter-spacing:-0.015em; margin:0 0 40px; max-width:22ch;">Three things I never compromise on</h2>
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(260px,1fr)); gap:24px;">
+        <div class="card elev-sm">
+          <span style="display:inline-flex; align-items:center; justify-content:center; width:46px; height:46px; border-radius:12px; border:1px solid var(--color-accent); color:var(--color-accent); font-size:24px;"><i class="ph ph-broadcast"></i></span>
+          <span class="card-title">Remote support</span>
+          <p class="card-body">Quick resolutions without an on-site visit — troubleshooting, updates and maintenance handled from anywhere.</p>
+        </div>
+        <div class="card elev-sm">
+          <span style="display:inline-flex; align-items:center; justify-content:center; width:46px; height:46px; border-radius:12px; border:1px solid var(--color-accent); color:var(--color-accent); font-size:24px;"><i class="ph ph-lightning"></i></span>
+          <span class="card-title">Rapid solutions</span>
+          <p class="card-body">Time is critical in tech. I deliver fast, effective fixes so you get back to business with minimal disruption.</p>
+        </div>
+        <div class="card elev-sm">
+          <span style="display:inline-flex; align-items:center; justify-content:center; width:46px; height:46px; border-radius:12px; border:1px solid var(--color-accent); color:var(--color-accent); font-size:24px;"><i class="ph ph-shield-checkered"></i></span>
+          <span class="card-title">Reliable systems</span>
+          <p class="card-body">Dependable networks and hardware, built and maintained to minimise downtime and keep you productive.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PROCESS TIMELINE ============ -->
+    <section style="padding: clamp(36px,5vw,64px) 0; border-top:1px solid var(--color-divider);">
+      <span style="display:block; font-size:12px; letter-spacing:.09em; text-transform:uppercase; color:var(--color-accent); margin-bottom:12px;">How working together goes</span>
+      <h2 style="font-size:clamp(26px,3.2vw,38px); line-height:1.1; letter-spacing:-0.015em; margin:0 0 44px; max-width:20ch;">From first message to fully sorted</h2>
+      <ol style="list-style:none; margin:0; padding:0; display:grid; grid-template-columns:repeat(auto-fit, minmax(220px,1fr)); gap:28px;">
+        <li style="position:relative;">
+          <span style="display:flex; align-items:center; gap:12px; margin-bottom:14px;"><span style="display:inline-flex; align-items:center; justify-content:center; width:38px; height:38px; border-radius:50%; background:var(--color-accent-900); color:var(--color-accent-300); font-size:15px; flex:none;">01</span><span style="height:1px; flex:1; background:linear-gradient(90deg, var(--color-accent), transparent);"></span></span>
+          <h3 style="font-size:18px; margin:0 0 6px;">Get in touch</h3>
+          <p style="font-size:14px; line-height:1.55; color:color-mix(in srgb, var(--color-text) 76%, transparent); margin:0;">Tell me what's going on in plain English. Every enquiry gets a reply within one working hour.</p>
+        </li>
+        <li style="position:relative;">
+          <span style="display:flex; align-items:center; gap:12px; margin-bottom:14px;"><span style="display:inline-flex; align-items:center; justify-content:center; width:38px; height:38px; border-radius:50%; background:var(--color-accent-900); color:var(--color-accent-300); font-size:15px; flex:none;">02</span><span style="height:1px; flex:1; background:linear-gradient(90deg, var(--color-accent), transparent);"></span></span>
+          <h3 style="font-size:18px; margin:0 0 6px;">Diagnose</h3>
+          <p style="font-size:14px; line-height:1.55; color:color-mix(in srgb, var(--color-text) 76%, transparent); margin:0;">I get to the root of it — usually remotely — and explain what's happening and your options, clearly.</p>
+        </li>
+        <li style="position:relative;">
+          <span style="display:flex; align-items:center; gap:12px; margin-bottom:14px;"><span style="display:inline-flex; align-items:center; justify-content:center; width:38px; height:38px; border-radius:50%; background:var(--color-accent-900); color:var(--color-accent-300); font-size:15px; flex:none;">03</span><span style="height:1px; flex:1; background:linear-gradient(90deg, var(--color-accent), transparent);"></span></span>
+          <h3 style="font-size:18px; margin:0 0 6px;">Fix or plan</h3>
+          <p style="font-size:14px; line-height:1.55; color:color-mix(in srgb, var(--color-text) 76%, transparent); margin:0;">A one-off fix on the spot, or a clear plan for bigger work — no jargon, no surprise costs.</p>
+        </li>
+        <li style="position:relative;">
+          <span style="display:flex; align-items:center; gap:12px; margin-bottom:14px;"><span style="display:inline-flex; align-items:center; justify-content:center; width:38px; height:38px; border-radius:50%; background:var(--color-accent-900); color:var(--color-accent-300); font-size:15px; flex:none;">04</span></span>
+          <h3 style="font-size:18px; margin:0 0 6px;">Ongoing support</h3>
+          <p style="font-size:14px; line-height:1.55; color:color-mix(in srgb, var(--color-text) 76%, transparent); margin:0;">Want peace of mind long-term? A support contract keeps everything monitored and maintained.</p>
+        </li>
+      </ol>
+    </section>
+
+  </div>
+
+  <!-- ============ CTA BAND ============ -->
+  <section style="background: radial-gradient(900px 420px at 85% -40%, color-mix(in srgb, var(--color-section-glow) 70%, transparent), transparent 64%), var(--color-section); margin-top:clamp(24px,4vw,48px);">
+    <div style="max-width:1240px; margin:0 auto; padding: clamp(40px,6vw,72px) clamp(20px,5vw,64px); display:flex; flex-wrap:wrap; gap:24px; align-items:center; justify-content:space-between;">
+      <div style="max-width:44ch;">
+        <h2 style="font-size:clamp(26px,3.2vw,38px); line-height:1.1; letter-spacing:-0.015em; margin:0 0 10px;">Let's sort your tech, together.</h2>
+        <p style="font-size:16px; line-height:1.55; color:color-mix(in srgb, var(--color-text) 82%, transparent); margin:0;">Have a question or a problem that needs solving? I'd love to help.</p>
+      </div>
+      <div style="display:flex; gap:12px; flex-wrap:wrap;">
+        <a href="RS%20Tech%20Solutions%20-%20Home.dc.html#contact" class="btn btn-primary" style="font-size:14px; padding:12px 22px;"><i class="ph ph-paper-plane-tilt"></i> Work with me</a>
+        <a href="RS%20Tech%20Solutions%20-%20Services.dc.html" class="btn btn-secondary" style="font-size:14px; padding:12px 22px;">See services <i class="ph ph-arrow-right"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer style="max-width:1240px; margin:0 auto; padding: clamp(36px,5vw,56px) clamp(20px,5vw,64px);">
+    <div style="display:flex; flex-wrap:wrap; gap:24px; justify-content:space-between; align-items:flex-start; padding-bottom:28px; border-bottom:1px solid var(--color-divider);">
+      <div style="max-width:34ch;">
+        <span class="nav-brand" style="display:flex; align-items:center; gap:9px; margin-bottom:10px;">
+          <span style="display:inline-flex; align-items:center; justify-content:center; width:28px; height:28px; border-radius:8px; border:1px solid var(--color-accent); color:var(--color-accent); font-size:15px;"><i class="ph ph-shield-check"></i></span>
+          RS Tech Solutions
+        </span>
+        <p style="font-size:14px; color:color-mix(in srgb, var(--color-text) 62%, transparent); margin:0;">Friendly, reliable IT support for homes and small businesses. Learn it, master it — or let us handle it.</p>
+      </div>
+      <div style="display:flex; gap:56px; flex-wrap:wrap;">
+        <div style="display:flex; flex-direction:column; gap:9px;">
+          <span style="font-size:11px; letter-spacing:.09em; text-transform:uppercase; color:color-mix(in srgb, var(--color-text) 50%, transparent);">Pages</span>
+          <a href="RS%20Tech%20Solutions%20-%20Services.dc.html" style="font-size:14px; color:color-mix(in srgb, var(--color-text) 80%, transparent);">Services</a>
+          <a href="RS%20Tech%20Solutions%20-%20About.dc.html" style="font-size:14px; color:color-mix(in srgb, var(--color-text) 80%, transparent);">About</a>
+          <a href="RS%20Tech%20Solutions%20-%20Blog.dc.html" style="font-size:14px; color:color-mix(in srgb, var(--color-text) 80%, transparent);">Blog</a>
+          <a href="RS%20Tech%20Solutions%20-%20Home.dc.html#contact" style="font-size:14px; color:color-mix(in srgb, var(--color-text) 80%, transparent);">Contact</a>
+        </div>
+        <div style="display:flex; flex-direction:column; gap:9px;">
+          <span style="font-size:11px; letter-spacing:.09em; text-transform:uppercase; color:color-mix(in srgb, var(--color-text) 50%, transparent);">Get in touch</span>
+          <a href="tel:+441234567890" style="font-size:14px; color:color-mix(in srgb, var(--color-text) 80%, transparent);">01234 567 890</a>
+          <a href="mailto:hello@rstechsolutions.co.uk" style="font-size:14px; color:color-mix(in srgb, var(--color-text) 80%, transparent);">hello@rstechsolutions.co.uk</a>
+        </div>
+      </div>
+    </div>
+    <p style="font-size:12px; color:color-mix(in srgb, var(--color-text) 45%, transparent); margin:20px 0 0;">© {{ year }} RS Tech Solutions. All rights reserved.</p>
+  </footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1280,&quot;height&quot;:2400}}">
+class Component extends DCLogic {
+  renderVals() {
+    return { year: new Date().getFullYear() };
+  }
+}
+</script>
+</body>
+</html>
