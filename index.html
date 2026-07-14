@@ -51,9 +51,6 @@
     <!-- ============ HERO ============ -->
     <section style="padding: clamp(48px,8vw,104px) 0 clamp(40px,6vw,64px); display:grid; grid-template-columns:minmax(0,1.35fr) minmax(0,1fr); gap:clamp(32px,5vw,64px); align-items:center;">
       <div style="max-width:640px;">
-        <span style="display:inline-flex; align-items:center; gap:8px; font-size:12px; letter-spacing:.08em; text-transform:uppercase; color:var(--color-accent); margin-bottom:22px;">
-          <span style="width:32px; height:1px; background:var(--color-accent);"></span> Friendly IT support, done properly
-        </span>
         <h1 style="font-size:clamp(38px,5.4vw,68px); line-height:1.04; letter-spacing:-0.022em; margin:0 0 24px;">Behind every fix is a foundation of knowledge.</h1>
         <p style="font-size:clamp(17px,1.7vw,21px); line-height:1.55; max-width:52ch; color:color-mix(in srgb, var(--color-text) 82%, transparent); margin:0 0 8px;">Learn it. Master it. Or let us handle it. From 24/7 remote support to networks, hosting and cyber security — one local team keeping your technology working so you don't have to think about it.</p>
         <div style="display:flex; gap:12px; flex-wrap:wrap; margin-top:30px;">
@@ -64,7 +61,20 @@
       </div>
       <figure class="lighten" style="margin:0;">
         <div style="position:relative; width:100%; aspect-ratio:4/5; border-radius:var(--radius-lg); overflow:hidden; box-shadow:var(--shadow-lg); border:1px solid var(--color-divider);">
-          <x-import component-from-global-scope="image-slot" from="./image-slot.js" id="hero-photo" shape="rect" fit="cover" placeholder="Drop a hero photo (workspace, kit, or team)" hint-size="100%,100%"></x-import>
+          <div style="position:absolute; inset:0; background: radial-gradient(120% 90% at 78% 8%, color-mix(in srgb, var(--color-accent-700) 55%, transparent), transparent 62%), linear-gradient(160deg, color-mix(in srgb, var(--color-accent-900) 90%, transparent), var(--color-surface) 78%); display:flex; flex-direction:column; justify-content:space-between; padding:clamp(22px,3.4vw,36px);">
+            <div style="display:flex; justify-content:space-between; align-items:flex-start;">
+              <span style="display:inline-flex; align-items:center; justify-content:center; width:56px; height:56px; border-radius:14px; background:color-mix(in srgb, var(--color-accent-900) 80%, transparent); border:1px solid color-mix(in srgb, var(--color-accent) 40%, transparent); color:var(--color-accent-300); font-size:30px;"><i class="ph-duotone ph-shield-check"></i></span>
+              <span style="display:inline-flex; align-items:center; justify-content:center; width:56px; height:56px; border-radius:14px; background:color-mix(in srgb, var(--color-accent-900) 55%, transparent); border:1px solid color-mix(in srgb, var(--color-accent) 26%, transparent); color:var(--color-accent-300); font-size:28px;"><i class="ph-duotone ph-wifi-high"></i></span>
+            </div>
+            <div style="display:flex; flex-direction:column; align-items:center; gap:14px;">
+              <span style="display:inline-flex; align-items:center; justify-content:center; width:clamp(96px,15vw,132px); height:clamp(96px,15vw,132px); border-radius:24px; background:color-mix(in srgb, var(--color-accent) 16%, transparent); border:1px solid color-mix(in srgb, var(--color-accent) 45%, transparent); color:var(--color-accent-300); font-size:clamp(54px,8vw,72px); box-shadow:0 0 0 10px color-mix(in srgb, var(--color-accent-900) 40%, transparent);"><i class="ph-duotone ph-wrench"></i></span>
+              <span style="font-size:12px; letter-spacing:.12em; text-transform:uppercase; color:color-mix(in srgb, var(--color-text) 60%, transparent);">Fixed properly, first time</span>
+            </div>
+            <div style="display:flex; gap:10px;">
+              <span style="flex:1; display:flex; align-items:center; gap:9px; padding:11px 13px; border-radius:12px; background:color-mix(in srgb, var(--color-bg) 45%, transparent); border:1px solid var(--color-divider); font-size:13px; color:color-mix(in srgb, var(--color-text) 82%, transparent);"><i class="ph-duotone ph-headset" style="color:var(--color-accent-300); font-size:19px;"></i> Remote fixes</span>
+              <span style="flex:1; display:flex; align-items:center; gap:9px; padding:11px 13px; border-radius:12px; background:color-mix(in srgb, var(--color-bg) 45%, transparent); border:1px solid var(--color-divider); font-size:13px; color:color-mix(in srgb, var(--color-text) 82%, transparent);"><i class="ph-duotone ph-lightbulb" style="color:var(--color-accent-300); font-size:19px;"></i> Real know-how</span>
+            </div>
+          </div>
         </div>
       </figure>
     </section>
@@ -93,7 +103,7 @@
           <h2 style="font-size:clamp(28px,3.6vw,40px); line-height:1.1; letter-spacing:-0.015em; margin:0 0 12px; max-width:20ch;">Everything your tech needs, from one team</h2>
           <p style="font-size:16px; max-width:56ch; color:color-mix(in srgb, var(--color-text) 74%, transparent); margin:0;">A one-off fix or ongoing support — here's a taste of what we cover. See the full list for details on every service.</p>
         </div>
-        <a href="services.html" class="btn btn-secondary" style="font-size:14px; padding:11px 20px; white-space:nowrap;">All 12 services <i class="ph ph-arrow-right"></i></a>
+        <a href="services.html" class="btn btn-secondary" style="font-size:14px; padding:11px 20px; white-space:nowrap;">All services <i class="ph ph-arrow-right"></i></a>
       </div>
 
       <div style="display:grid; grid-template-columns:repeat(auto-fill, minmax(280px,1fr)); gap:16px;">
@@ -155,10 +165,28 @@
 
       <div class="ba-slider" style="position:relative; width:100%; aspect-ratio:16/9; border-radius:var(--radius-lg); overflow:hidden; border:1px solid var(--color-divider); box-shadow:var(--shadow-lg); user-select:none;">
         <div style="position:absolute; inset:0;">
-          <x-import component-from-global-scope="image-slot" from="./image-slot.js" id="ba-before-photo" shape="rect" fit="cover" placeholder="Drop a 'before' photo (e.g. messy cabling, cluttered setup)" hint-size="100%,100%"></x-import>
+          <div style="position:absolute; inset:0; background: radial-gradient(120% 100% at 80% 0%, color-mix(in srgb, var(--color-accent) 34%, transparent), transparent 60%), linear-gradient(160deg, color-mix(in srgb, var(--color-accent-900) 92%, transparent), var(--color-surface)); overflow:hidden;">
+            <div style="position:absolute; top:14px; right:16px; display:flex; align-items:center; gap:7px; font-size:11px; letter-spacing:.09em; text-transform:uppercase; color:var(--color-accent-300);"><i class="ph-fill ph-check-circle"></i> Sorted</div>
+            <i class="ph-duotone ph-desktop" style="position:absolute; top:50%; left:50%; transform:translate(-50%,-56%); font-size:clamp(84px,16vw,150px); color:var(--color-accent-300);"></i>
+            <i class="ph-fill ph-check" style="position:absolute; top:38%; left:50%; transform:translate(-50%,-50%); font-size:clamp(38px,6.5vw,60px); color:var(--color-accent);"></i>
+            <i class="ph-bold ph-wifi-high" style="position:absolute; top:24%; left:22%; font-size:clamp(26px,4vw,40px); color:color-mix(in srgb, var(--color-accent-300) 90%, transparent);"></i>
+            <i class="ph-bold ph-shield-check" style="position:absolute; top:30%; right:16%; font-size:clamp(24px,3.6vw,36px); color:color-mix(in srgb, var(--color-accent-300) 90%, transparent);"></i>
+            <i class="ph-bold ph-lightning" style="position:absolute; bottom:22%; left:16%; font-size:clamp(22px,3.2vw,32px); color:color-mix(in srgb, var(--color-accent-300) 80%, transparent);"></i>
+            <i class="ph-duotone ph-sparkle" style="position:absolute; bottom:14%; right:14%; font-size:clamp(30px,5vw,52px); color:color-mix(in srgb, var(--color-accent-300) 70%, transparent);"></i>
+            <span style="position:absolute; bottom:44px; left:50%; transform:translateX(-50%); font-size:clamp(13px,1.6vw,17px); color:var(--color-accent-300); white-space:nowrap;">“Actually… yes, and now it works.”</span>
+          </div>
         </div>
         <div style="position:absolute; inset:0; clip-path: inset(0 {{ baClip }}% 0 0);">
-          <x-import component-from-global-scope="image-slot" from="./image-slot.js" id="ba-after-photo" shape="rect" fit="cover" placeholder="Drop an 'after' photo (e.g. tidy cabling, finished result)" hint-size="100%,100%"></x-import>
+          <div style="position:absolute; inset:0; background: radial-gradient(120% 100% at 20% 0%, color-mix(in srgb, #b3421f 42%, transparent), transparent 60%), linear-gradient(160deg, #2a1a1a, #241f2e); overflow:hidden;">
+            <div style="position:absolute; top:14px; left:16px; display:flex; align-items:center; gap:7px; font-size:11px; letter-spacing:.09em; text-transform:uppercase; color:#e6a58f;"><i class="ph-fill ph-warning-circle"></i> It's all gone wrong</div>
+            <i class="ph-duotone ph-desktop" style="position:absolute; top:50%; left:50%; transform:translate(-50%,-56%) rotate(-4deg); font-size:clamp(84px,16vw,150px); color:color-mix(in srgb, #e6a58f 70%, transparent);"></i>
+            <i class="ph-fill ph-x" style="position:absolute; top:38%; left:50%; transform:translate(-50%,-50%); font-size:clamp(40px,7vw,64px); color:#e05a3a;"></i>
+            <i class="ph-bold ph-wifi-slash" style="position:absolute; top:24%; left:22%; transform:rotate(-12deg); font-size:clamp(26px,4vw,40px); color:color-mix(in srgb, #e6a58f 80%, transparent);"></i>
+            <i class="ph-bold ph-bug-beetle" style="position:absolute; top:30%; right:16%; transform:rotate(14deg); font-size:clamp(24px,3.6vw,36px); color:color-mix(in srgb, #e6a58f 80%, transparent);"></i>
+            <i class="ph-bold ph-lightning-slash" style="position:absolute; bottom:22%; left:16%; transform:rotate(8deg); font-size:clamp(22px,3.2vw,32px); color:color-mix(in srgb, #e6a58f 70%, transparent);"></i>
+            <i class="ph-duotone ph-scribble-loop" style="position:absolute; bottom:14%; right:14%; font-size:clamp(30px,5vw,52px); color:color-mix(in srgb, #e6a58f 55%, transparent);"></i>
+            <span style="position:absolute; bottom:44px; left:50%; transform:translateX(-50%); font-size:clamp(13px,1.6vw,17px); color:#e6a58f; white-space:nowrap;">“Have you tried turning it off and on?”</span>
+          </div>
         </div>
         <div aria-hidden="true" style="position:absolute; top:0; bottom:0; left:{{ baPos }}%; width:2px; background:var(--color-accent); box-shadow:0 0 12px color-mix(in srgb, var(--color-accent) 70%, transparent); transform:translateX(-1px); pointer-events:none;"></div>
         <div aria-hidden="true" style="position:absolute; top:50%; left:{{ baPos }}%; width:40px; height:40px; border-radius:50%; background:var(--color-accent); color:var(--color-bg); display:flex; align-items:center; justify-content:center; font-size:18px; transform:translate(-50%,-50%); box-shadow:var(--shadow-md); pointer-events:none;"><i class="ph ph-arrows-left-right"></i></div>
@@ -232,12 +260,8 @@
             <span><span style="display:block; font-size:12px; text-transform:uppercase; letter-spacing:.06em; color:color-mix(in srgb, var(--color-text) 55%, transparent);">Email</span><span style="font-size:16px;">hello@rstechsolutions.co.uk</span></span>
           </a>
           <div style="display:flex; align-items:center; gap:14px;">
-            <span style="display:inline-flex; align-items:center; justify-content:center; width:44px; height:44px; border-radius:10px; background:var(--color-accent-900); color:var(--color-accent-300); font-size:22px; flex:none;"><i class="ph ph-clock"></i></span>
-            <span><span style="display:block; font-size:12px; text-transform:uppercase; letter-spacing:.06em; color:color-mix(in srgb, var(--color-text) 55%, transparent);">Hours</span><span style="font-size:16px;">Mon–Fri 8am–6pm · 24/7 for contract clients</span></span>
-          </div>
-          <div style="display:flex; align-items:center; gap:14px;">
             <span style="display:inline-flex; align-items:center; justify-content:center; width:44px; height:44px; border-radius:10px; background:var(--color-accent-900); color:var(--color-accent-300); font-size:22px; flex:none;"><i class="ph ph-map-pin"></i></span>
-            <span><span style="display:block; font-size:12px; text-transform:uppercase; letter-spacing:.06em; color:color-mix(in srgb, var(--color-text) 55%, transparent);">Coverage</span><span style="font-size:16px;">[Your area] &amp; remote across the UK</span></span>
+            <span><span style="display:block; font-size:12px; text-transform:uppercase; letter-spacing:.06em; color:color-mix(in srgb, var(--color-text) 55%, transparent);">Coverage</span><span style="font-size:16px;">Greater London &amp; remote across the UK</span></span>
           </div>
         </div>
       </div>
