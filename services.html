@@ -20,11 +20,10 @@
   .navlink { font-size:14px; color:color-mix(in srgb, var(--color-text) 78%, transparent); }
   .navlink:hover { color:var(--color-text); }
   .navlink[data-active="true"] { color:var(--color-accent); }
-  .svc-row { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:clamp(28px,4vw,64px); align-items:center; padding:clamp(32px,5vw,64px) 0; border-top:1px solid var(--color-divider); }
-  .svc-row:first-child { border-top:none; }
-  .svc-list > .svc-row:nth-child(even) .svc-visual { order:-1; }
-  @media (max-width:760px){ .svc-row { grid-template-columns:1fr; } .svc-list > .svc-row:nth-child(even) .svc-visual { order:0; } }
-  .svc-visual:hover i { transform:scale(1.06) rotate(-3deg); }
+  .svc-list { display:grid; grid-template-columns:repeat(auto-fill, minmax(320px,1fr)); gap:20px; }
+  .svc-card:hover { box-shadow: 0 0 0 1px var(--color-accent), 0 10px 30px rgba(0,0,0,.5) !important; transform: translateY(-3px); }
+  .svc-card { transition: transform .18s ease, box-shadow .18s ease; }
+  .svc-card:hover .svc-visual i { transform:scale(1.06) rotate(-3deg); }
   .svc-visual i { transition:transform .3s ease; }
 </style>
 </helmet>
@@ -63,25 +62,23 @@
       </figure>
     </section>
 
-    <!-- ============ SERVICE ROWS ============ -->
+    <!-- ============ SERVICE GRID ============ -->
     <div class="svc-list">
       <sc-for list="{{ services }}" as="s" hint-placeholder-count="6">
-        <section id="{{ s.id }}" class="svc-row">
-          <div class="svc-body">
-            <span style="display:inline-flex; align-items:center; gap:8px; font-size:11px; letter-spacing:.09em; text-transform:uppercase; color:var(--color-accent); margin-bottom:14px;">{{ s.kicker }}</span>
-            <h2 style="font-size:clamp(24px,3vw,34px); line-height:1.12; letter-spacing:-0.015em; margin:0 0 14px;">{{ s.title }}</h2>
-            <p style="font-size:16px; line-height:1.6; color:color-mix(in srgb, var(--color-text) 80%, transparent); margin:0 0 22px; max-width:50ch;">{{ s.tagline }}</p>
-            <ul style="list-style:none; margin:0 0 26px; padding:0; display:grid; grid-template-columns:repeat(auto-fill, minmax(230px,1fr)); gap:10px 20px;">
-              <sc-for list="{{ s.bullets }}" as="b" hint-placeholder-count="5">
-                <li style="display:flex; align-items:flex-start; gap:10px; font-size:14px; line-height:1.45; color:color-mix(in srgb, var(--color-text) 78%, transparent);"><i class="ph ph-check" style="color:var(--color-accent); font-size:16px; margin-top:2px; flex:none;"></i> {{ b }}</li>
-              </sc-for>
-            </ul>
-            <a href="index.html#contact" class="btn btn-secondary" style="font-size:14px; padding:10px 18px;">Talk to us about this <i class="ph ph-arrow-right"></i></a>
+        <section id="{{ s.id }}" class="card elev-sm svc-card" style="padding:clamp(22px,3vw,28px); gap:0;">
+          <div class="svc-visual" style="position:relative; aspect-ratio:16/9; border-radius:var(--radius-md); overflow:hidden; border:1px solid var(--color-divider); background:linear-gradient(150deg, var(--color-accent-900), color-mix(in srgb, var(--color-surface) 70%, var(--color-bg))); margin-bottom:22px; display:flex; align-items:center; justify-content:center;">
+            <span aria-hidden="true" style="position:absolute; top:-14px; right:2px; font-size:clamp(64px,9vw,84px); line-height:1; font-weight:600; color:color-mix(in srgb, var(--color-accent) 12%, transparent); letter-spacing:-0.04em;">{{ s.num }}</span>
+            <i class="ph-duotone {{ s.icon }}" style="font-size:clamp(40px,5vw,52px); color:var(--color-accent-300); position:relative;"></i>
           </div>
-          <div class="svc-visual" style="position:relative; aspect-ratio:4/3; border-radius:var(--radius-lg); overflow:hidden; border:1px solid var(--color-divider); background:linear-gradient(150deg, var(--color-accent-900), color-mix(in srgb, var(--color-surface) 70%, var(--color-bg))); box-shadow:var(--shadow-md); display:flex; align-items:center; justify-content:center;">
-            <span aria-hidden="true" style="position:absolute; top:-20px; right:6px; font-size:clamp(120px,18vw,200px); line-height:1; font-weight:600; color:color-mix(in srgb, var(--color-accent) 12%, transparent); letter-spacing:-0.04em;">{{ s.num }}</span>
-            <i class="ph-duotone {{ s.icon }}" style="font-size:clamp(64px,9vw,104px); color:var(--color-accent-300); position:relative;"></i>
-          </div>
+          <span style="display:inline-flex; align-items:center; gap:8px; font-size:11px; letter-spacing:.09em; text-transform:uppercase; color:var(--color-accent); margin-bottom:12px;">{{ s.kicker }}</span>
+          <h2 style="font-size:clamp(20px,2.2vw,24px); line-height:1.18; letter-spacing:-0.01em; margin:0 0 12px;">{{ s.title }}</h2>
+          <p style="font-size:15px; line-height:1.55; color:color-mix(in srgb, var(--color-text) 80%, transparent); margin:0 0 18px;">{{ s.tagline }}</p>
+          <ul style="list-style:none; margin:0 0 20px; padding:0; display:flex; flex-direction:column; gap:8px;">
+            <sc-for list="{{ s.bullets }}" as="b" hint-placeholder-count="5">
+              <li style="display:flex; align-items:flex-start; gap:10px; font-size:13.5px; line-height:1.45; color:color-mix(in srgb, var(--color-text) 78%, transparent);"><i class="ph ph-check" style="color:var(--color-accent); font-size:16px; margin-top:2px; flex:none;"></i> {{ b }}</li>
+            </sc-for>
+          </ul>
+          <a href="index.html#contact" class="btn btn-secondary" style="font-size:14px; padding:10px 18px; align-self:flex-start;">Talk to us about this <i class="ph ph-arrow-right"></i></a>
         </section>
       </sc-for>
     </div>

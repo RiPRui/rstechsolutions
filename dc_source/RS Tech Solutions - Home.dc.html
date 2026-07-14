@@ -26,6 +26,8 @@
   .navlink { font-size:14px; color:color-mix(in srgb, var(--color-text) 78%, transparent); }
   .navlink:hover { color:var(--color-text); }
   .navlink[data-active="true"] { color:var(--color-accent); }
+  .ba-slider input[type="range"] { -webkit-appearance:none; -moz-appearance:none; appearance:none; }
+  .ba-slider input[type="range"]:focus-visible { outline:2px solid var(--color-accent); outline-offset:2px; }
 </style>
 </helmet>
 
@@ -138,6 +140,31 @@
           <span class="btn btn-ghost" style="align-self:flex-start; padding-left:0;">Learn more <i class="ph ph-arrow-right"></i></span>
         </a>
 
+      </div>
+    </section>
+
+    <!-- ============ BEFORE / AFTER ============ -->
+    <section id="before-after" style="padding: clamp(40px,6vw,72px) 0;">
+      <div style="display:flex; flex-wrap:wrap; gap:20px; align-items:flex-end; justify-content:space-between; margin-bottom:32px;">
+        <div>
+          <span style="display:block; font-size:12px; letter-spacing:.09em; text-transform:uppercase; color:var(--color-accent); margin-bottom:12px;">Real results</span>
+          <h2 style="font-size:clamp(28px,3.6vw,40px); line-height:1.1; letter-spacing:-0.015em; margin:0 0 12px; max-width:22ch;">See the difference for yourself</h2>
+          <p style="font-size:16px; max-width:56ch; color:color-mix(in srgb, var(--color-text) 74%, transparent); margin:0;">Drag the slider to compare a job before and after we got our hands on it.</p>
+        </div>
+      </div>
+
+      <div class="ba-slider" style="position:relative; width:100%; aspect-ratio:16/9; border-radius:var(--radius-lg); overflow:hidden; border:1px solid var(--color-divider); box-shadow:var(--shadow-lg); user-select:none;">
+        <div style="position:absolute; inset:0;">
+          <x-import component-from-global-scope="image-slot" from="./image-slot.js" id="ba-before-photo" shape="rect" fit="cover" placeholder="Drop a 'before' photo (e.g. messy cabling, cluttered setup)" hint-size="100%,100%"></x-import>
+        </div>
+        <div style="position:absolute; inset:0; clip-path: inset(0 {{ baClip }}% 0 0);">
+          <x-import component-from-global-scope="image-slot" from="./image-slot.js" id="ba-after-photo" shape="rect" fit="cover" placeholder="Drop an 'after' photo (e.g. tidy cabling, finished result)" hint-size="100%,100%"></x-import>
+        </div>
+        <div aria-hidden="true" style="position:absolute; top:0; bottom:0; left:{{ baPos }}%; width:2px; background:var(--color-accent); box-shadow:0 0 12px color-mix(in srgb, var(--color-accent) 70%, transparent); transform:translateX(-1px); pointer-events:none;"></div>
+        <div aria-hidden="true" style="position:absolute; top:50%; left:{{ baPos }}%; width:40px; height:40px; border-radius:50%; background:var(--color-accent); color:var(--color-bg); display:flex; align-items:center; justify-content:center; font-size:18px; transform:translate(-50%,-50%); box-shadow:var(--shadow-md); pointer-events:none;"><i class="ph ph-arrows-left-right"></i></div>
+        <span aria-hidden="true" class="tag tag-neutral" style="position:absolute; bottom:14px; left:14px; pointer-events:none;">Before</span>
+        <span aria-hidden="true" class="tag tag-accent" style="position:absolute; bottom:14px; right:14px; pointer-events:none;">After</span>
+        <input type="range" min="0" max="100" value="{{ baPos }}" onInput="{{ onBaSlide }}" aria-label="Drag to compare before and after photos" style="position:absolute; inset:0; width:100%; height:100%; margin:0; opacity:0; cursor:ew-resize;" />
       </div>
     </section>
 
@@ -271,7 +298,7 @@
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1280,&quot;height&quot;:3200},&quot;showStats&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Sections&quot;}}">
 class Component extends DCLogic {
-  state = { submitted: false };
+  state = { submitted: false, baPos: 50 };
 
   renderVals() {
     return {
@@ -281,6 +308,9 @@ class Component extends DCLogic {
       year: new Date().getFullYear(),
       onSubmit: (e) => { e.preventDefault(); this.setState({ submitted: true }); },
       onReset: () => this.setState({ submitted: false }),
+      baPos: this.state.baPos,
+      baClip: 100 - this.state.baPos,
+      onBaSlide: (e) => this.setState({ baPos: Number(e.target.value) }),
     };
   }
 }
